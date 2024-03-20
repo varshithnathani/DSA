@@ -16,6 +16,7 @@ class BubbleSort{
             arr[i] = SC.nextInt();
         }
         bubbleSort(arr);;
+        SC.close();
 
     }
 
