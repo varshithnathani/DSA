@@ -1,0 +1,29 @@
+import java.util.*;
+public class BestTimeToBuyAndSellStocks {
+
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] prices = new int[n];
+        for(int i =0; i<n; i++){
+            prices[i]= sc.nextInt();
+        }
+
+        System.out.println("Profit: "+result(prices));
+        sc.close();
+    }
+
+    public static int result(int[] prices){
+        int maxProfit = Integer.MIN_VALUE;
+        int minValue = prices[0];
+        for(int i =0; i<prices.length; i++){
+            if(prices[i]< minValue){
+                minValue = prices[i];
+            }else{
+                maxProfit = Math.max(maxProfit, (prices[i]-minValue));
+            }
+        }
+        return maxProfit;
+    }
+    
+}
